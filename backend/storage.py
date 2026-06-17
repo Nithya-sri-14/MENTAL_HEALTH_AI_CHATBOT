@@ -2,8 +2,17 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import os
+
 ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = ROOT / "data"
+
+# Support Render persistent disk redirection via environment variables
+DATA_DIR_ENV = os.environ.get("DATA_DIR")
+if DATA_DIR_ENV:
+    DATA_DIR = Path(DATA_DIR_ENV).resolve()
+else:
+    DATA_DIR = ROOT / "data"
+
 KB_DIR = DATA_DIR / "knowledge_base"
 UPLOAD_DIR = DATA_DIR / "uploads"
 INDEX_DIR = DATA_DIR / "index"
