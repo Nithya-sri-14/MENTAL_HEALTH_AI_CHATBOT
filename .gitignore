@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+.streamlit/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+artifacts/
+data/uploads/
+data/index/
+data/*.db
+*.db
+.env
+*.log

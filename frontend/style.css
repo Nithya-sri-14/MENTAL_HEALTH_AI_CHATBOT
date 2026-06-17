@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Main root override for custom font and aesthetics */
+html, body, p, h1, h2, h3, h4, h5, h6, button, input, select, textarea, label {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Glassmorphism Hero Banner */
+.hero {
+    padding: 1.8rem 2rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0b1528 0%, #0d1e3d 50%, #15325c 100%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+/* Compact Glassmorphism Card */
+.compact-card {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 1.2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 1rem;
+}
+
+.compact-card:hover {
+    border-color: rgba(56, 189, 248, 0.3) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.1);
+}
+
+/* Critical Risk Alert Banner */
+.critical-alert {
+    background: linear-gradient(90deg, #7f1d1d 0%, #ef4444 100%);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-weight: 600;
+    border-left: 6px solid #b91c1c;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.25);
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.95; }
+}
+
+/* Beautiful Login/Onboarding card layout */
+div[data-testid="stVerticalBlockBorderWrapper"]:has(.login-title) {
+    max-width: 480px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 24px;
+    background: rgba(11, 21, 40, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+/* WhatsApp Phone Preview frame mockup */
+.whatsapp-frame {
+    border: 12px solid #334155;
+    border-radius: 36px;
+    padding: 1.5rem;
+    background: #0b141a;
+    max-width: 320px;
+    margin: 1rem auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.whatsapp-header {
+    background: #075e54;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 12px 12px 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    text-align: left;
+}
+
+.whatsapp-message {
+    background: #dcf8c6;
+    color: #303030;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    text-align: left;
+    border-top-left-radius: 0;
+}
+
+.whatsapp-time {
+    font-size: 0.65rem;
+    color: #7f8c8d;
+    text-align: right;
+    margin-top: 0.25rem;
+}
+
+/* Custom styled clinical metrics */
+.metric-box {
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
