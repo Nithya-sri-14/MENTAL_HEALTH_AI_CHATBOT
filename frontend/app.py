@@ -1,10 +1,43 @@
 from __future__ import annotations
 
+import socket
+import subprocess
+import sys
+import time
+from pathlib import Path
 import streamlit as st
 import pandas as pd
-from pathlib import Path
 import csv
 import io
+
+
+def ensure_backend_running():
+    # Probe if backend port 8000 is active
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(0.2)
+    try:
+        s.connect(("127.0.0.1", 8000))
+        s.close()
+    except Exception:
+        s.close()
+        # Backend port is inactive, launch FastAPI in background
+        try:
+            root_dir = Path(__file__).resolve().parent.parent
+            subprocess.Popen(
+                [sys.executable, "-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", "8000"],
+                cwd=str(root_dir),
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            # Wait a brief moment for FastAPI to initialize and migrate SQLite database
+            time.sleep(2.0)
+        except Exception:
+            pass
+
+
+# Automatically ensure backend services are running before API calls execute
+ensure_backend_running()
+
 
 from api_client import (
     login,
